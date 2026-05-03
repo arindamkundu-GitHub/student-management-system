@@ -8,7 +8,7 @@ export default function AllStudents() {
     useEffect(() => {
         const getStudents = async () => {
             try {
-                const res = await axios.get("http://localhost:8070/student/");
+                const res = await axios.get(`${import.meta.env.VITE_API_URL}/student`);
                 setStudents(res.data);
             } catch (err) {
                 console.error("Error from server:", err);

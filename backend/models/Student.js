@@ -29,8 +29,7 @@ const studentSchema = new Schema({
         type: String
     },
     contactNumber: {
-        type: Number,
-        max:10
+        type: Number
     },
     email: {
         type: String,

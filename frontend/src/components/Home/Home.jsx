@@ -11,7 +11,7 @@ export default function Home() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8070/student/count")
+            .get(`${import.meta.env.VITE_API_URL}/student/count`)
             .then((res) => {
                 setCount(res.data.count);
             })

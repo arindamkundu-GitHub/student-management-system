@@ -15,7 +15,7 @@ export default function StudentProfile() {
     // Fetch student
     const fetchStudent = async () => {
         try {
-            const res = await axios.get(`http://localhost:8070/student/get/${id}`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/student/get/${id}`);
             setStudent(res.data.user);
             setUpdatedStudent(res.data.user);
         } catch (err) {
@@ -41,7 +41,7 @@ export default function StudentProfile() {
         e.preventDefault();
         try {
             const res = await axios.put(
-                `http://localhost:8070/student/update/${id}`,
+                `${import.meta.env.VITE_API_URL}/student/update/${id}`,
                 updatedStudent
             );
             console.log("Updated:", res.data);
